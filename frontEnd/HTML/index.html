@@ -1,0 +1,77 @@
+<!--Import jQuery-->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<!--Import Personal Javascript-->
+<script type="text/javascript" src="/JS/index.js"></script>
+
+
+<!--Socket.io-->
+<script src="/socket.io/socket.io.js"></script>
+
+
+
+<body>
+    <h1>Welcome to the Pizza API!</h1>
+    <!--    <button onClick="Pepperoni()" />Add Pepperoni</button>-->
+
+    <form id="form">
+        Mushrooms:
+        <input type="checkbox" id="top0" value="Mushrooms">
+        <br> Pepperoni:
+        <input type="checkbox" id="top1" value="Pepperoni">
+        <br> Onion:
+        <input type="checkbox" id="top2" value="Onion">
+        <br> Garlic:
+        <input type="checkbox" id="top3" value="Garlic">
+        <br> Tomato:
+        <input type="checkbox" id="top4" value="Tomato">
+        <br> Hot Italian Sausage:
+        <input type="checkbox" id="top5" value="Hot Italian Sausage">
+        <br> PineApple:
+        <input type="checkbox" id="top6" value="PineApple">
+        <br> Jalapenos:
+        <input type="checkbox" id="top7" value="Jalapenos">
+        <br> Banana Peppers:
+        <input type="checkbox" id="top8" value="Banana Peppers">
+        <br> Anchovies:
+        <input type="checkbox" id="top9" value="Anchovies">
+        <br>
+        <br>
+        <!--        <input type="submit" value="Submit" onclick="Pepperoni()">-->
+        <input type="submit" value="Send" onclick="Pepperoni()">
+    </form>
+    <!--    <button onClick="Pepperoni()" />Add</button>-->
+    <div id="future"></div>
+    <div id="topping0"></div>
+    <div id="topping1"></div>
+    <div id="topping2"></div>
+    <div id="topping3"></div>
+    <div id="topping4"></div>
+    <div id="topping5"></div>
+    <div id="topping6"></div>
+    <div id="topping7"></div>
+    <div id="topping8"></div>
+    <div id="topping9"></div>
+</body>
+
+<script>
+    var socket = io.connect('http://localhost:1998');
+    socket.on('connect', function (data) {
+        socket.emit('join', 'Hello World #2 from client!!!!!');
+    });
+    socket.on('broad', function (data) {
+        $('#future').text(data);
+    });
+
+    //    socket.on('printPiz', function (data) {
+    //        $('#future').html(data);
+    //    });
+
+    $('form').submit(function (e) {
+        console.log("hey");
+        e.preventDefault();
+        var message = $('#top8').val();
+        console.log(message);
+        socket.emit('messages', message);
+    });
+</script>
