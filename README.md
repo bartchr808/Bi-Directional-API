@@ -1,5 +1,5 @@
 # Bi-Directional-API
-
+Inspired by Domino’s Pizza online ordering system to send JSON  le of toppings to server, save in database, and send back frequent status updates to primary client. Utilized Node.js, Express, Mongoose, and MongoDB for the storage system, Socket.io for bi-directional communication based by events, and Python for Raspberry Pi sending messages back.
 
 ## Getting Started
 
