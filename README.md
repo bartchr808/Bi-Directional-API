@@ -5,10 +5,10 @@ Inspired by Domino’s Pizza online ordering system to send JSON  le of toppings
 
 ### Prerequisites
 
-Once project is downloaded locally, install [MongoDB](https://docs.mongodb.com/manual/installation/), then [Node.js](https://nodejs.org/en/download/), and then the [Mongoose](http://mongoosejs.com/) object modeliing library for Node.js and [Socket.io](http://socket.io/) real-time application framework by running:
+Once project is downloaded locally, install [MongoDB](https://docs.mongodb.com/manual/installation/), then [Node.js](https://nodejs.org/en/download/), and then the [Mongoose](http://mongoosejs.com/) object modeliing library for Node.js, [Express](http://expressjs.com/), and [Socket.io](http://socket.io/) real-time application framework by running:
 
 ```
-$ npm install mongoose socket.io
+$ npm install express mongoose socket.io
 ```
 
 ### Running
